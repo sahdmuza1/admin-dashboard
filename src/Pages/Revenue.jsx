@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import img from "../assets/flask.webp"
-
+import '../input.css'
 const FragranceMixer = () => {
   const [fragrances, setFragrances] = useState([
     { brand: '', fragrance: '', percentage: 0 },
@@ -39,12 +39,24 @@ const FragranceMixer = () => {
 
         <div className="grid items-start grid-cols-1 gap-12 md:grid-cols-2">
 
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center flex-col overflow-hidden">
             <img src={img} alt="" className="object-cover w-full h-full" />
+
             <div className="absolute text-2xl font-bold text-gray-900 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
               {totalPercentage}%
+             
             </div>
+           
+            <div className='wavem absolute'>
+          <svg viewBox="0 0 296 20" xmlns="http://www.w3.org/2000/svg" class="wave-svg" width="296" height="auto">
+    <path d="M0,10 Q50,0 100,10 T200,10 T296,10 L296,20 L0,20 Z" fill="lightblue"/>
+</svg>
           </div>
+
+          </div>
+        
+         
+
 
           <div className="space-y-8">
             <h2 className="mb-6 text-xl font-medium">Choose Two Or More Fragnances</h2>

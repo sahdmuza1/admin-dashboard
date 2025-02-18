@@ -1,0 +1,14 @@
+.wave-svg {
+    animation: waveAnimation 1s linear infinite;
+    width:200%
+}
+
+@keyframes waveAnimation {
+    100% {
+        transform: translate(-50%, 0);
+      }
+}
+.wavem{
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+}
