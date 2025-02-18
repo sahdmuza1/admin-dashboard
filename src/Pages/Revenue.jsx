@@ -39,20 +39,22 @@ const FragranceMixer = () => {
 
         <div className="grid items-start grid-cols-1 gap-12 md:grid-cols-2">
 
-          <div className="relative flex items-center justify-center flex-col overflow-hidden">
-            <img src={img} alt="" className="object-cover w-full h-full" />
+          <div className="relative card flex items-center justify-center flex-col overflow-hidden">
+            <img src={img} alt="" className="object-cover w-full h-full" style={{zIndex:'3'}} />
 
             <div className="absolute text-2xl font-bold text-gray-900 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
               {totalPercentage}%
              
             </div>
            
-            <div className='wavem absolute'>
-          <svg viewBox="0 0 296 20" xmlns="http://www.w3.org/2000/svg" class="wave-svg" width="296" height="auto">
-    <path d="M0,10 Q50,0 100,10 T200,10 T296,10 L296,20 L0,20 Z" fill="lightblue"/>
-</svg>
-          </div>
-
+            <div className="wavem" style={{ height: `${totalPercentage}%` }}>
+              <div className="wave-container">
+                 <svg viewBox="0 0 296 20" xmlns="http://www.w3.org/2000/svg" className="wave-svg mt-0 pt-0" width="296" height="60px
+                 // ">
+                 <path d="M0,10 Q50,0 100,10 T200,10 T296,10 L296,20 L0,20 Z" fill="lightblue"/>
+                 </svg>
+              </div>
+            </div>
           </div>
         
          
@@ -94,6 +96,7 @@ const FragranceMixer = () => {
                     <option value="sauvage">Sauvage</option>
                   </select>
                 </div>
+             
 
                 <div className="relative pt-4">
                   <div className="absolute right-0 flex items-center justify-center w-12 h-12 bg-white border rounded-full -top-1">

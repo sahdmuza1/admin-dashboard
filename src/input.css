@@ -1,14 +1,39 @@
+.wavem {
+    width: calc(100% - 4px);
+    position: absolute;
+    background: lightgreen;
+    transition: height 0.3s ease-in-out;
+    left: 2px;
+    bottom: 0; 
+    z-index: 1; 
+    height: calc(100% - 4px);
+    overflow: hidden;  
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+/* Wave positioned at the top */
+.wave-container {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    
+    width: 100%;
+    height: 15px;
+}
+
 .wave-svg {
     animation: waveAnimation 1s linear infinite;
-    width:200%
+    width: 200%;
+    height: 60px;
+    position: absolute;
+    top: -58px;
+    z-index:2;
 }
 
 @keyframes waveAnimation {
     100% {
         transform: translate(-50%, 0);
-      }
+    }
 }
-.wavem{
-    width: calc(100% - 4px);
-    height: calc(100% - 4px);
-}
+
