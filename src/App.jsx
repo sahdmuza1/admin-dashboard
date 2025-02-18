@@ -9,15 +9,13 @@ function App() {
   return (
     <div className="flex flex-col w-screen h-screen">
       <Navbar />
-      <div className="flex flex-1">
-        {/* <Sidebar /> */}
-        <div className="flex-1 p-5 overflow-auto bg-gray-100">
-          <Routes>
-            <Route path="/" element={<Revenue />} />
-            {/* <Route path="/Users" element={<Users />} />
+      <div className="">
+        <Routes>
+          <Route path="/" element={<Revenue />} />
+          {/* <Route path="/Users" element={<Users />} />
             <Route path="/Sales" element={<Sales />} /> */}
-          </Routes>
-        </div>
+        </Routes>
+
       </div>
     </div>
   );

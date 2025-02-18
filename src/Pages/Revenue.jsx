@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import img from "../assets/flask.webp"
+import img from "../assets/bottle.png"
 import '../input.css'
 const FragranceMixer = () => {
   const [fragrances, setFragrances] = useState([
@@ -12,9 +12,9 @@ const FragranceMixer = () => {
   const handlePercentageChange = (index, value) => {
     const newFragrances = [...fragrances];
     newFragrances[index].percentage = parseInt(value);
-  
+
     const total = newFragrances.reduce((sum, f) => sum + f.percentage, 0);
-  
+
     if (total > 100) {
       const diff = total - 100;
       for (let i = 0; i < newFragrances.length; i++) {
@@ -23,14 +23,14 @@ const FragranceMixer = () => {
         }
       }
     }
-  
+
     setFragrances(newFragrances);
   };
-  
+
   const totalPercentage = fragrances.reduce((sum, f) => sum + f.percentage, 0);
 
   return (
-    <div className="bg-[#F7EFEB] min-h-screen py-8">
+    <div className="bg-[#fff] min-h-screen py-8">
       <div className="max-w-5xl px-6 mx-auto">
         <div className="mb-8 text-center">
           <h1 className="mb-2 text-2xl">MIX IT</h1>
@@ -38,26 +38,24 @@ const FragranceMixer = () => {
         </div>
 
         <div className="grid items-start grid-cols-1 gap-12 md:grid-cols-2">
+          <div className="relative flex flex-col items-center justify-center overflow-hidden card">
+            <img src={img} alt="" className="object-cover w-full h-full" style={{ zIndex: '3' }} />
 
-          <div className="relative card flex items-center justify-center flex-col overflow-hidden">
-            <img src={img} alt="" className="object-cover w-full h-full" style={{zIndex:'3'}} />
-
-            <div className="absolute text-2xl font-bold text-gray-900 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+            <div className="absolute z-10 text-2xl font-bold text-gray-900 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
               {totalPercentage}%
-             
+
             </div>
-           
+
             <div className="wavem" style={{ height: `${totalPercentage}%` }}>
               <div className="wave-container">
-                 <svg viewBox="0 0 296 20" xmlns="http://www.w3.org/2000/svg" className="wave-svg mt-0 pt-0" width="296" height="60px
-                 // ">
-                 <path d="M0,10 Q50,0 100,10 T200,10 T296,10 L296,20 L0,20 Z" fill="lightblue"/>
-                 </svg>
+                <svg viewBox="0 0 296 20" xmlns="http://www.w3.org/2000/svg" className=" wave-svg" width="296" height="auto">
+                  <path d="M0,10 Q50,0 100,10 T200,10 T296,10 L296,20 L0,20 Z" fill="#000" />
+                </svg>
               </div>
             </div>
           </div>
-        
-         
+
+
 
 
           <div className="space-y-8">
@@ -96,14 +94,16 @@ const FragranceMixer = () => {
                     <option value="sauvage">Sauvage</option>
                   </select>
                 </div>
-             
 
-                <div className="relative pt-4">
-                  <div className="absolute right-0 flex items-center justify-center w-12 h-12 bg-white border rounded-full -top-1">
-                    {fragrance.percentage}%
+
+                <div className="relative py-2">
+                  <div className="flex justify-center w-full">
+                    <div className="flex items-center justify-center w-12 h-12 bg-white border rounded-full">
+                      {fragrance.percentage}%
+                    </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <span className="text-sm text-gray-500">0%</span>
+                    <span className="text-sm font-bold text-gray-500">0%</span>
                     <input
                       type="range"
                       min="0"
@@ -125,7 +125,7 @@ const FragranceMixer = () => {
                         },
                       }}
                     />
-                    <span className="text-sm text-gray-500">100%</span>
+                    <span className="text-sm font-bold text-gray-500">100%</span>
                   </div>
                 </div>
               </div>
