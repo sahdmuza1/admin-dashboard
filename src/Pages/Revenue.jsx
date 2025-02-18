@@ -10,22 +10,23 @@ const FragranceMixer = () => {
   const [scentName, setScentName] = useState('');
 
   const handlePercentageChange = (index, value) => {
+    const newPercentage = parseInt(value); 
     const newFragrances = [...fragrances];
-    newFragrances[index].percentage = parseInt(value);
-
+  
+    newFragrances[index].percentage = newPercentage;
+  
     const total = newFragrances.reduce((sum, f) => sum + f.percentage, 0);
-
+  
     if (total > 100) {
-      const diff = total - 100;
-      for (let i = 0; i < newFragrances.length; i++) {
-        if (i !== index) {
-          newFragrances[i].percentage -= Math.min(newFragrances[i].percentage, diff);
-        }
-      }
+      return;
     }
-
+  
     setFragrances(newFragrances);
   };
+  
+  
+  
+  
 
   const totalPercentage = fragrances.reduce((sum, f) => sum + f.percentage, 0);
 
@@ -38,7 +39,7 @@ const FragranceMixer = () => {
         </div>
 
         <div className="grid items-start grid-cols-1 gap-12 md:grid-cols-2">
-          <div className="relative overflow-hidden flex flex-col items-center justify-center  card">
+          <div className="relative flex flex-col items-center justify-center overflow-hidden card">
             <img src={img} alt="" className="object-cover w-full h-full" style={{ zIndex: '3' }} />
 
             <div className="absolute z-10 text-2xl font-bold text-gray-900 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
