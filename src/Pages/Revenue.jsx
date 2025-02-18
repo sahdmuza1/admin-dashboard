@@ -38,7 +38,7 @@ const FragranceMixer = () => {
         </div>
 
         <div className="grid items-start grid-cols-1 gap-12 md:grid-cols-2">
-          <div className="relative flex flex-col items-center justify-center overflow-hidden card">
+          <div className="relative overflow-hidden flex flex-col items-center justify-center  card">
             <img src={img} alt="" className="object-cover w-full h-full" style={{ zIndex: '3' }} />
 
             <div className="absolute z-10 text-2xl font-bold text-gray-900 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -48,8 +48,8 @@ const FragranceMixer = () => {
 
             <div className="wavem" style={{ height: `${totalPercentage}%` }}>
               <div className="wave-container">
-                <svg viewBox="0 0 296 20" xmlns="http://www.w3.org/2000/svg" className=" wave-svg" width="296" height="auto">
-                  <path d="M0,10 Q50,0 100,10 T200,10 T296,10 L296,20 L0,20 Z" fill="#000" />
+                <svg viewBox="0 0 320 20" xmlns="http://www.w3.org/2000/svg" className=" wave-svg" width="296" height="auto">
+                  <path d="M0,10 Q50,0 100,10 T200,10 T296,10 L296,20 L0,20 Z" fill="#49597d" />
                 </svg>
               </div>
             </div>

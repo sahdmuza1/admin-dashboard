@@ -1,15 +1,15 @@
 .wavem {
     width: calc(100% - 4px);
     position: absolute;
-    background: #f6a73e;
+    background:#49597d;
     transition: height 0.3s ease-in-out;
     left: 2px;
     bottom: 0; 
     z-index: 1; 
     height: calc(100% - 4px);
-    overflow: hidden;  
+ 
     border-radius: 10px;
-    overflow: hidden; 
+
 }
 
 /* Wave positioned at the top */
@@ -18,16 +18,16 @@
     top: 0px;
     left: 0;
     
-    width: 100%;
+    width: calc(100% - 4px);
     height: 15px;
 }
 
 .wave-svg {
-    animation: waveAnimation 1s linear infinite;
-    width: 200%;
-    height: 60px;
+    animation: waveAnimation 1s  infinite linear;
+    width: 206% ;
+    height: 93px;
     position: absolute;
-    top: -58px;
+    top: -75px;
     z-index:2;
 }
 
