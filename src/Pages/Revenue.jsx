@@ -27,7 +27,6 @@ const FragranceMixer = () => {
     setFragrances(newFragrances);
   };
   
-
   const totalPercentage = fragrances.reduce((sum, f) => sum + f.percentage, 0);
 
   return (
